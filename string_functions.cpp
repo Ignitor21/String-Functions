@@ -10,7 +10,7 @@ int puts1(const char* s)
 		return EOF;
 	}
 
-	for (int i = 0; i < strlen(s); i++)
+	for (size_t i = 0; i < strlen(s); i++)
 		putchar(s[i]);
 	putchar('\n');
 	return strlen(s);
@@ -18,7 +18,7 @@ int puts1(const char* s)
 
 const char* strchr1(const char* s, int symbol)
 {
-	for (int i = 0; i < strlen(s); i++)
+	for (size_t i = 0; i < strlen(s); i++)
 	{
 		if (*(s + i) == symbol)
 			return &s[i];
@@ -26,4 +26,11 @@ const char* strchr1(const char* s, int symbol)
 
 	printf("Данного символа нет в строке!\n");
 	return nullptr;
+}
+
+size_t strlen1(const char* s)
+{
+	size_t i = 0;
+	for (i = 0; s[i] != '\0'; ++i);
+	return i;
 }
