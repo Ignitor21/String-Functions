@@ -10,15 +10,15 @@ int puts1(const char* s)
 		return EOF;
 	}
 
-	for (size_t i = 0; i < strlen(s); i++)
+	for (size_t i = 0; s[i] != '\0'; i++)
 		putchar(s[i]);
 	putchar('\n');
-	return strlen(s);
+	return 1;
 }
 
 const char* strchr1(const char* s, int symbol)
 {
-	for (size_t i = 0; i < strlen(s); i++)
+	for (size_t i = 0; s[i] != '\0'; i++)
 	{
 		if (*(s + i) == symbol)
 			return &s[i];
@@ -33,4 +33,12 @@ size_t strlen1(const char* s)
 	size_t i = 0;
 	for (i = 0; s[i] != '\0'; ++i);
 	return i;
+}
+
+char* strcpy1(char* destination, const char* source)
+{
+	for (size_t i = 0; source[i] != '\0'; i++)
+		destination[i] = source[i];
+	return destination;
+
 }
