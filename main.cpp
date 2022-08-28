@@ -44,6 +44,12 @@ int main(void)
 	printf("Строки: %s и %s\n", str1, STR);
 	printf("Разность длин этих строк: %d\n", strcmp1(STR, str1));
 	putchar('\n');
-	return 0;
+	
+	char destination4[100] = "abce";
+	printf("Работа strcat1(): \n");
+	printf("Начальные строки: %s и %s\n", destination4, STR);
+	printf("Итоговая строка: %s\n", strncat1(destination4, STR, 7));
+	putchar('\n');
 
+	return 0;
 }

@@ -20,7 +20,7 @@ int puts1(const char* s)
 
 const char* strchr1(const char* s, char symbol)
 {
-	size_t i = 0;
+
 	for (size_t i = 0; s[i] != '\0'; i++)
 	{
 		if (*(s + i) == symbol)
@@ -75,6 +75,22 @@ char* strcat1(char* destination, const char* source)
 
 }
 
+char* strncat1(char* destination, const char* source, size_t n)
+{
+	size_t destination_len = strlen1(destination);
+	size_t i = destination_len;
+	size_t j = 0;
+
+	for (i = destination_len, j = 0; i < destination_len + n; i++, j++)
+	{
+		destination[i] = source[j];
+	}
+
+	destination[i] = '\0';
+
+	return destination;
+}
+
 int strcmp1(const char* s1, const char* s2)
 {
 	int len1 = strlen1(s1);
@@ -82,3 +98,19 @@ int strcmp1(const char* s1, const char* s2)
 
 	return (len1 - len2);
 }
+
+//void getStringsFromFile()
+//{	
+//	numberOfStrings = 0;
+//	FILE* fp = NULL;
+//	fp = fopen("example.txt", "r");
+//	fscanf(fp, "%d", &numberOfStrings);
+
+//	char* strings[numberOfStrings] = {0};
+
+//	for (int i = 0; i < numberOfStrings; i++)
+	
+			
+
+
+//}
