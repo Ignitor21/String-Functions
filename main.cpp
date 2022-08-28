@@ -3,6 +3,8 @@
 
 int main(void)
 {
+	static const char* STR = "Test_String!";
+
 	printf("Работа puts1():\n");
 	puts1(STR);	
 	puts1("");
@@ -31,5 +33,17 @@ int main(void)
 	printf("%s\n", strncpy1(destination2, STR, 4));
 	putchar('\n');
 
+	char destination3[100] = "abce";
+	printf("Работа strcat1(): \n");
+	printf("Начальные строки: %s и %s\n", destination3, STR);
+	printf("Итоговая строка: %s\n", strcat1(destination3, STR));
+	putchar('\n');
+
+	char str1[] = "123";
+	printf("Работа strcmp1():\n");
+	printf("Строки: %s и %s\n", str1, STR);
+	printf("Разность длин этих строк: %d\n", strcmp1(STR, str1));
+	putchar('\n');
 	return 0;
+
 }
