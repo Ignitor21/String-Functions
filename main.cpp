@@ -30,7 +30,7 @@ int main(void)
 	printf("Работа strncpy1():\nНачальная строка: ");
 	printf("%s\n", destination2);
 	printf("Новая строка: ");
-	printf("%s\n", strncpy1(destination2, STR, 4));
+	printf("%s\n", strncpy1(destination2, STR, 5));
 	putchar('\n');
 
 	char destination3[100] = "abce";
@@ -39,14 +39,14 @@ int main(void)
 	printf("Итоговая строка: %s\n", strcat1(destination3, STR));
 	putchar('\n');
 
-	char str1[] = "123";
+	char str1[] = "S123";
 	printf("Работа strcmp1():\n");
 	printf("Строки: %s и %s\n", str1, STR);
-	printf("Разность длин этих строк: %d\n", strcmp1(STR, str1));
+	printf("Разность длин этих строк: %d\n", strcmp1(str1, STR));
 	putchar('\n');
 	
 	char destination4[100] = "abce";
-	printf("Работа strcat1(): \n");
+	printf("Работа strncat1(): \n");
 	printf("Начальные строки: %s и %s\n", destination4, STR);
 	printf("Итоговая строка: %s\n", strncat1(destination4, STR, 7));
 	putchar('\n');
